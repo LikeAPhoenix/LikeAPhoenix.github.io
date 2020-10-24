@@ -1,11 +1,11 @@
 # Site settings
 title: XDong Blog
 SEOTitle: 旭东博客 | XDong Blog
-header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+header-img: 
+email: H_H-hxd@outlook.com
 description: ""
 keyword: ""
-url: "https://blog.dongdongblog.xyz/"              # your host, for absolute URL
+url: "https://blog.dongdongblog.xyz"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
