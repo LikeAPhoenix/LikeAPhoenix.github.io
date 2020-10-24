@@ -2,7 +2,7 @@
 title: XDong Blog
 SEOTitle: 旭东博客 | XDong Blog
 header-img: img/home-bg-firekeeper.jpg
-email: H_H-hxd@outlook.com
+email: 
 description: ""
 keyword: ""
 url: "https://www.dongdongblog.xyz"              # your host, for absolute URL
@@ -70,7 +70,7 @@ ga_domain: blog.dongdongblog.xyz
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "学习"
-sidebar-avatar: img/avatar-asuka.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-asuka.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
