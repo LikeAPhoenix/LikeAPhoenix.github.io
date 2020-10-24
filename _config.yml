@@ -77,7 +77,7 @@ sidebar-avatar: img/avatar-asuka.jpg      # use absolute URL, seeing it's used i
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 0              # A tag will be featured if the size of it is more than this condition value
-
+                                        # 该标签文件大于这个数即会显示为featured-tags
 
 
 # Friends
