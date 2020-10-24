@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "基础dp总结"
-subtitle:   " \"Hello World, Hello Blog\""
+subtitle:   " \"01背包 完全背包 多重背包及其优化 分组背包 最长公共子序列 \""
 date:       2020-10-24 17:00:00
 author:     "XDong"
 header-img: "img/post-bg-2015.jpg"
@@ -13,7 +13,7 @@ tags:
 # 基础DP总结
 
 ## [装箱问题](https://www.luogu.com.cn/problem/P1049)
-
+dancong
 >有一个箱子容量为V（正整数，0≤V≤20000），同时有n个物品（0&lt;n≤=30，每个物品有一个体积（正整数）。  
 要求n个物品中，任取若干个装入箱内，使箱子的剩余空间为最小。
 
