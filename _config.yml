@@ -5,17 +5,17 @@ header-img: img/home-bg-firekeeper.jpg
 email: H_H-hxd@outlook.com
 description: ""
 keyword: ""
-url: "https://dongdongblog.xyz"              # your host, for absolute URL
+url: "https://www.dongdongblog.xyz"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-#weibo_username:     huxpro
+bilibili_username:   443398104
+github_username:     LikeAPhoenix
 #zhihu_username:     huxpro
-#github_username:    huxpro
-#twitter_username:  huxpro
+#twitter_username:   huxpro
 #facebook_username:  huxpro
 
 
@@ -81,4 +81,5 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 # Friends
 friends: [
+    
 ]
