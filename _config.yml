@@ -68,8 +68,8 @@ ga_domain: blog.dongdongblog.xyz
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "学习。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "学习"
+sidebar-avatar: /img/avatar-asuka.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
