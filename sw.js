@@ -31,7 +31,7 @@ const PRECACHE_LIST = [
 ]
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "dongdongblog.xyz", // 换成了自己的域名
+  "xdong.site", // 换成了自己的域名
   "yanshuo.io",
   "cdnjs.cloudflare.com"
 ]
