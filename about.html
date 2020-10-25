@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "About"
-description: "你是我的梦想"
-header-img: "img/about-bg.jpg"
+description: "一直在仰望星空"
+header-img: "img/about-bg-walle.jpg"
 multilingual: true
 ---
 
@@ -14,4 +14,8 @@ multilingual: true
     {{ about_zh | markdownify }}
 </div>
 
-{% endif %}
+<!-- English Version -->
+<div class="en post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
