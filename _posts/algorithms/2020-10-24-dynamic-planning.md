@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "基础dp总结"
-subtitle:   " \"01背包 完全背包 多重背包及其优化 分组背包 最长公共子序列等动态规划问题\""
+subtitle:   "01背包 完全背包 多重背包及其优化 分组背包 最长公共子序列等动态规划问题"
 date:       2020-10-24 17:00:00
 author:     "XDong"
 header-img: "img/post-bg-wlop-2880x1800.jpg"
