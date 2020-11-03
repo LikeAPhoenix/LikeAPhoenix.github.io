@@ -286,7 +286,5 @@ int main() {
 
 
 ## 参考链接
-
-
  - [MOOC](https://www.icourse163.org/course/ZJU-93001)
  - [数据结构](/pdf/7-1.pdf)
