@@ -41,7 +41,7 @@ tags:
 ## [KMP]()
 
 
-## [最短路](https://xdong.site/2020/10/31/%E5%9B%BE%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF/)
+## [最短路](https://xdong.site/2020/10/31/shortest-path/)
 
 
 ## [最小生成树]()
