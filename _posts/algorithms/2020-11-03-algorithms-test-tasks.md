@@ -29,7 +29,7 @@ tags:
 ## [DP](https://xdong.site/2020/10/24/dynamic-planning/)
 
 
-## [搜索]()
+## [搜索](https://xdong.site/2020/11/03/search/)
 
 
 ## [质数筛]()
