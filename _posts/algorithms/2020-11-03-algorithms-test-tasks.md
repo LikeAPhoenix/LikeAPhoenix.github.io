@@ -38,7 +38,7 @@ tags:
 ## [快速幂]()
 
 
-## [KMP]()
+## [KMP](https://xdong.site/2020/11/03/knuth-morria-pratt/)
 
 
 ## [最短路](https://xdong.site/2020/10/31/shortest-path/)
