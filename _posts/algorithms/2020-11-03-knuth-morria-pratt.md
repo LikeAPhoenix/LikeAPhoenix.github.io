@@ -99,5 +99,5 @@ int main() {
 
 
 ## 参考链接
- - [浙江大学-MOOC](https://www.icourse163.org/course/ZJU-93001)
- - [MOOC-PDF](/pdf/KMP.pdf)
+- [浙江大学-MOOC](https://www.icourse163.org/course/ZJU-93001)
+- [MOOC-PDF](/pdf/KMP.pdf)

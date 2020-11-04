@@ -27,32 +27,41 @@ tags:
 
 
 ## [DP](https://xdong.site/2020/10/24/dynamic-planning/)
+>√
 
 
 ## [搜索](https://xdong.site/2020/11/03/search/)
+>√
 
 
 ## [质数筛]()
+>×
 
 
 ## [快速幂]()
+>×
 
 
 ## [KMP](https://xdong.site/2020/11/03/knuth-morria-pratt/)
+>√
 
 
 ## [最短路](https://xdong.site/2020/10/31/shortest-path/)
+>×
 
 
 ## [最小生成树]()
+>×
 
 
 ## [并查集]()
+>√
 
 
 ## [线段树]()
+>×
 
 
 ## [树状数组]()
-
+>×
 
