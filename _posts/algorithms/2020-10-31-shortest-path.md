@@ -11,12 +11,13 @@ tags:
 
 
 # 图的最短路
+
 >最短路径问题的抽象
+
 >1. 在网络中，求两个不同顶点之间的所有路径中，边的权值之和最小的那一条路径
 >2. 这条路径就是两点之间的最短路径(Shortest Path)
 >3. 第一个顶点为源点(Source)
 >4. 最后一个顶点为终点(Destination)
-
 
 - [图的最短路](#图的最短路)
   - [单源最短路](#单源最短路)
@@ -26,16 +27,19 @@ tags:
     - [单源最短路算法](#单源最短路算法)
     - [Floyd算法](#floyd算法)
   - [G. Reducing Delivery Cost](#g-reducing-delivery-cost)
+  - [P1119 灾后重建](#p1119-灾后重建)
   - [参考链接](#参考链接)
 
-
 ## 单源最短路
+
 >单源最短路径问题：从某固定源点出发，求其到所有其他顶点的最短路径
+
 >1. (有向)无权图
 >2. (有向)有权图
 
 
 ### 无权图
+
 按照递增（非递减）的顺序找出到各个顶点的最短路,即BFS
 
 ```cpp
@@ -62,8 +66,8 @@ void unweighted(int S) {
 }
 ```
 
-
 ### 有权图
+
 按照递增的顺序找出到各个顶点的最短路,即Dijkstra算法
 
 ```cpp
@@ -146,20 +150,38 @@ int main() {
 }
 ```
 
-
 ## 多源最短路
+
 >求任意两顶点间的最短路径
+
 >1. 直接将单源最短路算法调用V遍
 >2. Floyd算法
 
-
 ### [单源最短路算法](#有权图)
-
 
 ### Floyd算法
 
+![](/img/algorithms/floyd.jpg)
+
+```cpp
+void floyd() {
+  for (int i = 0; i < N; i++) {  // 自回路权重为0，没有直接路径为INF
+    for (int j = 0; j < N; j++) {
+      dist[i][j] = map[i][j];
+    }
+  }
+  for (int k = 0; k < N; i++) {  // 以k为中间路径
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < N; j++) {
+        dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+      }
+    }
+  }
+}
+```
 
 ## [G. Reducing Delivery Cost](https://codeforces.com/contest/1433/problem/G)
+
 You are a mayor of Berlyatov. There are n districts and m two-way roads between them. The i-th road connects districts xi and yi. The cost of travelling along this road is wi. There is some path between each pair of districts, so the city is connected.
 
 There are k delivery routes in Berlyatov. The i-th route is going from the district ai to the district bi. There is one courier on each route and the courier will always choose the cheapest (minimum by total cost) path from the district ai to the district bi to deliver products.
@@ -284,7 +306,58 @@ int main() {
 }
 ```
 
+## [P1119 灾后重建](https://www.luogu.com.cn/problem/P1119)
+
+```cpp
+#include <iostream>
+#include <cstring>
+using namespace std;
+const int INF = 0x3f3f3f3f;
+int N, M;
+int map[205][205], times[205];
+
+// 最短路径中的中间村庄k已经重建好了
+void floyd(int k) {
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+      map[i][j] = min(map[i][j], map[i][k] + map[k][j]);
+    }
+  }
+} 
+
+int main() {
+  cin >> N >> M;
+  for (int i = 0; i < N; i++) {
+    cin >> times[i];
+  }
+  memset(map, 0x3f, sizeof(map));  // 初始化
+  for (int i = 0; i < N; i++) {
+    map[i][i] = 0;
+  }
+  int x, y, w, t;
+  for (int i = 0; i < M; i++) {
+    cin >> x >> y >> w;
+    map[x][y] = map[y][x] = w;
+  }
+  int Q, index = 0;
+  cin >> Q;
+  for (int i = 0; i < Q; i++) {
+    cin >> x >> y >> t;
+    while (times[index] <= t && index < N) {  // 模拟重建到询问的时间
+      floyd(index);  // 只有到了重建时间，才会把该村庄加入
+      index++;
+    }
+    if (times[x] > t || times[y] > t || map[x][y] == INF) {  
+      cout << -1 << endl; // 两个端点村庄还没重建好或者不连通
+    } else {
+      cout << map[x][y] << endl;
+    }
+  }
+  return 0;
+}
+```
 
 ## 参考链接
+
 - [浙江大学-MOOC](https://www.icourse163.org/course/ZJU-93001)
 - [MOOC-PDF](/pdf/7-1.pdf)
