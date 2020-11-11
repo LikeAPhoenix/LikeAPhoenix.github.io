@@ -28,7 +28,7 @@ void build_next(string &pattern, int *next) {  // O(m)
   next[0] = -1;
   for (int j = 1; j < pattern.length(); j++) {
     i = next[j - 1];
-    while (i >= 0 && (pattern[i + 1] && pattern[j])) {  // 不相等继续前移i
+    while (i >= 0 && (pattern[i + 1] != pattern[j])) {  // 不相等继续前移i
       i = next[i];
     }
     if (pattern[i + 1] == pattern[j]) {
@@ -54,7 +54,7 @@ void build_next(string &pattern, int *next) {
   next[0] = -1;
   for (int j = 1; j < pattern.length(); j++) {
     i = next[j - 1];
-    while (i >= 0 && (pattern[i + 1] && pattern[j])) {  // 不相等继续前移i
+    while (i >= 0 && (pattern[i + 1] != pattern[j])) {  // 不相等继续前移i
       i = next[i];
     }
     if (pattern[i + 1] == pattern[j]) {
