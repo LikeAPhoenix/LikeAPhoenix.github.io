@@ -78,7 +78,7 @@ inline void push_down(ll p, ll len) {  // 标记向下传递
 
 ### 开方
 
-等我会了。。。。。。
+变成开方即可（等我有时间再更新）
 
 ## 区间查询
 
@@ -190,3 +190,7 @@ int main() {
   return 0;
 }
 ```
+
+## 参考链接
+
+- [算法学习笔记(14): 线段树](https://zhuanlan.zhihu.com/p/106118909)

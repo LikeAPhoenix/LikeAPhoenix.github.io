@@ -12,7 +12,6 @@ tags:
 
 # 算法考核
 
-
 - [算法考核](#算法考核)
   - [DP](#dp)
   - [搜索](#搜索)
@@ -25,43 +24,22 @@ tags:
   - [线段树](#线段树)
   - [树状数组](#树状数组)
 
-
 ## [DP](https://xdong.site/2020/10/24/dynamic-planning/)
->√
-
 
 ## [搜索](https://xdong.site/2020/11/03/search/)
->√
 
+## [质数筛](https://xdong.site/2020/11/11/prime-number/)
 
-## [质数筛]()
->×
-
-
-## [快速幂]()
->×
-
+## [快速幂](https://xdong.site/2020/11/11/exponentiation-by-squaring/)
 
 ## [KMP](https://xdong.site/2020/11/03/knuth-morria-pratt/)
->√
-
 
 ## [最短路](https://xdong.site/2020/10/31/shortest-path/)
->×
 
+## [最小生成树](https://xdong.site/2020/11/20/minimum-spanning-tree/)
 
-## [最小生成树]()
->×
+## [并查集](https://xdong.site/2020/11/04/disjoint-set-union/)
 
+## [线段树](https://xdong.site/2020/11/15/segment/)
 
-## [并查集]()
->√
-
-
-## [线段树]()
->×
-
-
-## [树状数组]()
->×
-
+## [树状数组](https://xdong.site/2020)

@@ -100,6 +100,13 @@ int find(int x) {
 }
 ```
 
+也可以用循环实现
+```cpp
+int find(int x) {  
+  while (x != fa[x]) x = fa[x] == fa[fa[x]];
+  return x;
+}
+```
 
 ## 优化后的模板
 ```cpp
@@ -111,6 +118,10 @@ void init(int n) {
   }
 }
 int find(int x) {
+  /* 循环实现
+  while (x != fa[x]) x = fa[x] == fa[fa[x]];
+  return x;
+  */
   return x == fa[x] ? x : (fa[x] = find(fa[x]));
 }
 void merge(int i, int j) {
