@@ -53,11 +53,11 @@ $C8 = A8 + C7 + C6 + C4 = A8 + A7 + A6 + A5 + A4 + A3 + A2 + A1$
 
 ![x & (-x)](/img/algorithms/binary-index-tree-2.png)
 
-$lowbit(74) = lowbit(2) = 10B = 2$
-$C2 = C1 + A2 = A1 + A2$
+$lowbit(74) = lowbit(2) = 10B = 2$  
+$C2 = C1 + A2 = A1 + A2$  
 
-$lowbit(40) = lowbit(8) = 1000B = 8$
-$C8 = A8 + C7 + C6 + C4 = A8 + A7 + A6 + A5 + A4 + A3 + A2 + A1$ 
+$lowbit(40) = lowbit(8) = 1000B = 8$  
+$C8 = A8 + C7 + C6 + C4 = A8 + A7 + A6 + A5 + A4 + A3 + A2 + A1$  
 
 ```cpp
 int lowbit(int x) {  // 返回末尾最后一个1和后面的0
