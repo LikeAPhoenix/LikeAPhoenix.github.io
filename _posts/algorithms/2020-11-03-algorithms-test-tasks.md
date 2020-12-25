@@ -42,4 +42,4 @@ tags:
 
 ## [线段树](https://xdong.site/2020/11/15/segment/)
 
-## [树状数组](https://xdong.site/2020)
+## [树状数组](https://xdong.site/2020/11/20/binary-index-tree/)
