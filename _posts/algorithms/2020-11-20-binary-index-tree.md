@@ -35,7 +35,7 @@ tags:
 ![树状数组](/img/algorithms/binary-index-tree-1.jpg)
 
 $C1 = A1$  
-$C2 = A2 + C1 == A2 + A1$
+$C2 = A2 + C1 == A2 + A1$  
 $C3 = A3$  
 $C4 = A4 + C3 + C2 = A4 + A3 + A2 + A1$  
 $C5 = A5$  
