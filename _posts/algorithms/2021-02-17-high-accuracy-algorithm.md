@@ -14,7 +14,9 @@ tags:
 
 高精度计算（Arbitrary-Precision Arithmetic），也被称作大整数（bignum）计算，运用了一些算法结构来支持更大整数间的运算（数字大小超过语言内建整型）。
 
-## 高精度加法
+## 高精度对高精度
+
+### 高精度加法
 
 竖式加法
 
@@ -41,7 +43,7 @@ tags:
   }
 ```
 
-## 高精度减法
+### 高精度减法
 
 竖式减法
 
@@ -68,7 +70,7 @@ tags:
   }
 ```
 
-## 高精度乘法
+### 高精度乘法
 
 竖式乘法
 
@@ -97,7 +99,7 @@ tags:
   }
 ```
 
-## 高精度除法
+### 高精度除法
 
 竖式长除法
 
@@ -134,7 +136,7 @@ tags:
   }
 ```
 
-## 高精度取余
+### 高精度取余
 
 与高精度除法类似
 
@@ -153,6 +155,76 @@ tags:
   }
 ```
 
+## 高精度对低精度
+
+### 高精度乘上低精度
+
+模拟手工乘法
+
+```cpp
+  // 高精度乘上低精度
+  BigInt multiplication_low(long long int x) {
+    BigInt res;
+    res.digits = digits;
+    long long int carry = 0;  // 进位
+    for (int i = 0; i < res.digits; i++) {
+      res.data[i] = data[i] * x + carry;
+      carry = res.data[i] / 10;
+      res.data[i] %= 10;
+    }
+    while (carry != 0) {
+      res.data[res.digits++] = carry % 10;
+      carry /= 10;
+    }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
+    return res;
+  }
+```
+
+### 高精度除上低精度
+
+模拟手工除法
+
+```cpp
+  // 高精度除上低精度
+  BigInt divsion_low(long long int x) {
+    BigInt res;
+    res.digits = digits;
+    long long int reminder = 0;
+    for (int i = res.digits - 1; i >= 0; i--) {
+      res.data[i] = (reminder * 10 + data[i]) / x;
+      reminder = (reminder * 10 + data[i]) % x;
+    }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
+    return res;
+  }
+```
+
+### 高精度取余低精度
+
+模拟手工除法取余
+
+```cpp
+  // 高精度取余低精度
+  long long int reminder_low(long long int x) {
+    BigInt res;
+    res.digits = digits;
+    long long int reminder = 0;
+    for (int i = res.digits - 1; i >= 0; i--) {
+      res.data[i] = (reminder * 10 + data[i]) / x;
+      reminder = (reminder * 10 + data[i]) % x;
+    }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
+    return reminder;
+  }
+```
+
 ## 完整模板
 
 - 支持+ - * / %运算，只能是正数
@@ -164,7 +236,7 @@ tags:
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
-const int MAXDigit = 2e4 + 5;  // 最大位数
+const int MAXDigit = 1e4 + 5;  // 最大位数
 
 struct BigInt {
   int data[MAXDigit];  // 存储数据
@@ -185,6 +257,54 @@ struct BigInt {
       cout << data[i];
     }
     cout << endl;
+  }
+
+  // 高精度乘上低精度
+  BigInt multiplication_low(long long int x) {
+    BigInt res;
+    res.digits = digits;
+    long long int carry = 0;  // 进位
+    for (int i = 0; i < res.digits; i++) {
+      res.data[i] = data[i] * x + carry;
+      carry = res.data[i] / 10;
+      res.data[i] %= 10;
+    }
+    while (carry != 0) {
+      res.data[res.digits++] = carry % 10;
+      carry /= 10;
+    }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
+    return res;
+  }
+  // 高精度除上低精度
+  BigInt divsion_low(long long int x) {
+    BigInt res;
+    res.digits = digits;
+    long long int reminder = 0;
+    for (int i = res.digits - 1; i >= 0; i--) {
+      res.data[i] = (reminder * 10 + data[i]) / x;
+      reminder = (reminder * 10 + data[i]) % x;
+    }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
+    return res;
+  }
+  // 高精度取余低精度
+  long long int reminder_low(long long int x) {
+    BigInt res;
+    res.digits = digits;
+    long long int reminder = 0;
+    for (int i = res.digits - 1; i >= 0; i--) {
+      res.data[i] = (reminder * 10 + data[i]) / x;
+      reminder = (reminder * 10 + data[i]) % x;
+    }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
+    return reminder;
   }
 
   // 重载运算符=
@@ -384,6 +504,9 @@ struct BigInt {
         res -= temp;
       }
     }
+    while (res.data[res.digits - 1] == 0 && res.digits > 1) {
+      res.digits--;
+    }
     return res;
   }
 };
@@ -412,9 +535,10 @@ int main() {
   } else {
     cout << '-' << (c = b - a) << endl;
   }
-  cout << (c = a * b) << endl
-       << (c = a / b) << endl
-       << (c = a % b) << endl;
+  cout << (c = a * b) << endl << (c = a / b) << endl << (c = a % b) << endl;
+
+  cout << (c = a.multiplication_low(50)) << endl;
+  cout << (c = a.divsion_low(50)) << endl << a.reminder_low(50) << endl;
   return 0;
 }
 ```
