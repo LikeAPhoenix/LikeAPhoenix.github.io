@@ -3,7 +3,6 @@ _posts/_draft
 _posts/_archive
 _archive
 node_modules
-.vscode
 *.log
 *.lock
 *.sh
@@ -13,7 +12,4 @@ node_modules
 */*/.DS_Store
 _posts/create.cpp
 _posts/create.exe
-_posts/more
 _posts/waste
-img/more
-算法pdf
