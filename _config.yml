@@ -60,11 +60,16 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: xdong-blog
+disqus_username: false
 
 # Netease settings
 netease_comment: false
 
+# Gitalk
+gitalk_comment: true
+gitalk_clientID: e9e51b0c9c3b5084735d
+gitalk_clientSecret: 94d1c3dde6747532af173b62b6cd2598ee90fd07
+gitalk_repo: LikeAPhoenix.github.io
 
 
 # Analytics settings
