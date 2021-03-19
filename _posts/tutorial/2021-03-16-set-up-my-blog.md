@@ -99,6 +99,10 @@ KaTeX中宏的用法[Markdown+Math](https://marketplace.visualstudio.com/items?i
 
 ## 评论框
 
-现在用的是[disqus](https://disqus.com/)，但是disqus的评论框不能免费去广告
+以前用的是[disqus](https://disqus.com/)，但是disqus的评论框不能免费去广告
 
-未来打算换成[gitalk](https://github.com/gitalk/gitalk)
+现在已经换成[gitalk](https://github.com/gitalk/gitalk)
+
+gitalk教程：
+
+- [Add Gitalk to Your Jekyll Blog](https://aerolith.ink/2018/08/25/Gitalk/)
