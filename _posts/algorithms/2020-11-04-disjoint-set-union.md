@@ -7,6 +7,7 @@ author:     "XDong"
 header-img: "img/post-bg-wlop-2880x1800.jpg"
 tags:
     - 算法
+    - 并查集
 ---
 
 
@@ -138,6 +139,10 @@ void merge(int i, int j) {
 }
 ```
 
+## 注意事项
+
+- 记得在main函数中调用init函数进行初始化
+- 访问一个节点的根节点时用find函数，因为集合关系可能已经更新了，如进行了merge操作，但是fa[i]记录的还是以前的根节点
 
 ## [PTA:File Transfer](https://pintia.cn/problem-sets/1302953266564911104/problems/1315322294215434241)
 We have a network of computers and a list of bi-directional connections. Each of these connections allows a file transfer from one computer to another. Is it possible to send a file from any computer on the network to any other?

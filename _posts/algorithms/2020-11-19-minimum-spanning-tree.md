@@ -7,6 +7,7 @@ author:     "XDong"
 header-img: "img/post-bg-wlop-2880x1800.jpg"
 tags:
     - 算法
+    - 最小生成树
 ---
 
 
