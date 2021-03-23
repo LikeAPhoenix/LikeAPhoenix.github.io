@@ -7,6 +7,8 @@ author:     "XDong"
 header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
 tags:
     - 算法
+    - 搜索
+    - 并查集
 ---
 
 
