@@ -44,8 +44,6 @@ void build(ll l = 1, ll r = n, ll p = 1) {
 
 如果要求修改区间  *[l,r]* ，把所有包含在区间 *[l,r]* 中的节点都遍历一次、修改一次，时间复杂度无法承受。我们这里要引入一个叫做 **「懒惰标记」** 的东西。
 
-### 加法
-
 ```cpp
 // cl 当前区间左边界 cr 当前区间右边界 d区间修改的值
 // l 要修改的区间左边界 r 要修改的区间右边界
@@ -77,10 +75,6 @@ inline void push_down(ll p, ll len) {  // 标记向下传递
 }
 ```
 
-### 开方
-
-变成开方即可（等我有时间再更新）
-
 ## 区间查询
 
 区间查询类似于区间修改
@@ -100,7 +94,7 @@ ll query(ll l, ll r, ll p = 1, ll cl = 1, ll cr = n) {
 }
 ```
 
-### [线段树模板题（区间加）](https://www.luogu.com.cn/problem/P3372)
+## [线段树模板题（区间加）](https://www.luogu.com.cn/problem/P3372)
 
 解析：线段树的基本操作
 
@@ -191,6 +185,99 @@ int main() {
   return 0;
 }
 ```
+
+## 线段树优化
+
+```cpp
+#include <bits/stdc++.h>
+#define IO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+using namespace std;
+typedef long long ll;
+
+const int MAXN = 1e5 + 5, NA = 0;
+ll tree[MAXN * 4], mark[MAXN * 4], a[MAXN];
+ll n, m;
+
+// 构造线段树
+void build(int l, int r, int p) {
+  if (l == r) {
+    tree[p] = a[l];
+  } else {
+    int mid = (l + r) / 2;
+    build(l, mid, 2 * p);
+    build(mid + 1, r,  2 * p + 1);
+    tree[p] = tree[2 * p] + tree[2 * p + 1];
+  }
+}
+// 更新函数
+void upd(ll p, ll d, ll len) {
+  tree[p] += d * len;
+  (mark[p] == NA) ? (mark[p] = d) : (mark[p] += d);
+}
+// 向下传递标记
+void push_down(int p, int len) {
+  if (mark[p] != NA) {
+    upd(2 * p, mark[p], len - len / 2);
+    upd(2 * p + 1, mark[p], len / 2);
+    mark[p] = NA;
+  }
+}
+// 区间更新值
+void update(int l, int r, int d, int p = 1, int cl = 1, int cr = n) {
+  if (cl >= l && cr <= r) {
+    return upd(p, d, cr - cl + 1);
+  }
+  push_down(p, cr - cl + 1);
+  int mid = (cl + cr) / 2;
+  if (mid >= l) {
+    update(l, r, d, 2 * p, cl, mid);
+  }
+  if (mid < r) {
+    update(l, r, d, 2 * p + 1, mid + 1, cr);
+  }
+  tree[p] = tree[2 * p] + tree[2 * p + 1];
+}
+// 查询区间和
+ll query(int l, int r, int p = 1, int cl = 1, int cr = n) {
+  if (cl >= l && cr <= r) {
+    return tree[p];
+  }
+  push_down(p, cr - cl + 1);
+  int mid = (cl + cr) / 2;
+  if (mid >= r) {
+    return query(l, r, 2 * p, cl, mid);
+  } else if (mid < l) {
+    return query(l, r, 2 * p + 1, mid + 1, cr);
+  } else {
+    return query(l, r, 2 * p, cl, mid) + query(l, r, 2 * p + 1, mid + 1, cr);
+  }
+}
+
+int main() {
+  cin >> n >> m;
+  for (ll i = 1; i <= n; i++) {
+    cin >> a[i];
+  }
+  build(1, n, 1);
+
+  ll flag, x, y, k;
+  for (ll i = 0; i < m; i++) {
+    cin >> flag >> x >> y;
+    if (flag == 1) {
+      cin >> k;
+      update(x, y, k);
+    } else {
+      cout << query(x, y) << endl;
+    }
+  }
+  return 0;
+}
+```
+
+关于区间修改和区间查询的一点不一样
+
+- 修改：不用返回值所以两个if语句可以同时成立
+- 查询：需要返回值，if-else语句中只有一个能够成立
 
 ## 参考链接
 
