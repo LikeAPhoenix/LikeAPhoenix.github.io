@@ -11,6 +11,14 @@ tags:
     - 寻址方式
 ---
 
+<link rel="stylesheet" href="http://yandex.st/highlightjs/10.7.2/styles/Gradient_Light.css">
+<script src="http://yandex.st/highlightjs/10.7.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+![dafs](/img/algorithms/3.1.1.png)
+
 
 # 数据寻址方式
 
@@ -54,8 +62,13 @@ MOV AL, [1000H]
 ```x86asm
 MOV AX, [BX]
 MOV AL, [BP]
-MOV AX, ES : [DI]
+MOV AX, ES : [DI] ;dfas
 MOV AX, [BX]
 ```
 
 ### 寄存器
+
+```cpp
+#include <iostream>
+using namespace std;
+```
