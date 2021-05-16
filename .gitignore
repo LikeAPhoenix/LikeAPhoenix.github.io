@@ -12,7 +12,9 @@ node_modules
 */*/.DS_Store
 _posts/create.cpp
 _posts/create.exe
-_posts/more
 _posts/waste
+_posts/more
+_posts/mine
 img/more
+img/mine
 _export
