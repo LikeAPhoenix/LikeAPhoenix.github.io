@@ -4,7 +4,7 @@ title:      "树状数组"
 subtitle:   "单点修改和区间查询，时间复杂度均为Ologn"
 date:       2020-11-20 23:07:37
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 树状数组

@@ -4,7 +4,7 @@ title:      "线段树"
 subtitle:   "线段树的模板及几道例题"
 date:       2020-11-15 22:53:29
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 线段树

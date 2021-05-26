@@ -4,7 +4,7 @@ title:      "区间DP"
 subtitle:   "洛谷题单【动态规划3】区间与环形动态规划"
 date:       2021-03-03 16:08:58
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - DP

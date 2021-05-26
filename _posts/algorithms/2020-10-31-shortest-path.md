@@ -4,7 +4,7 @@ title:      "图的最短路"
 subtitle:   "CF-Round-G"
 date:       2020-10-31 19:45:42
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 最短路

@@ -21,7 +21,7 @@ const PRECACHE_LIST = [
   "./js/snackbar.js",
   "./img/icon_wechat.png",  //这张微信图片有啥用?
   "./img/avatar-asuka.jpg", // 图片都换成自己的了
-  "./img/home-bg-firekeeper.jpg",
+  "./img/home-bg-wlop.jpg",
   "./img/404-bg.jpg",
   "./css/hux-blog.min.css",
   "./css/bootstrap.min.css"

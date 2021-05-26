@@ -4,7 +4,7 @@ title:      "最小生成树"
 subtitle:   "Prim算法 Kruskal算法"
 date:       2020-11-19 21:04:53
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 最小生成树

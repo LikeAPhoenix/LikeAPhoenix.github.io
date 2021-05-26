@@ -4,7 +4,7 @@ title:      "天梯赛测试题解"
 subtitle:   ""
 date:       2021-03-22 23:25:32
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - 算法
     - 搜索

@@ -4,7 +4,7 @@ title:      "蓝桥杯讲课"
 subtitle:   ""
 date:       2021-03-25 21:39:08
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - 算法
     - 蓝桥杯

@@ -4,7 +4,7 @@ title:      "ASCII码表"
 subtitle:   ""
 date:       2021-05-17 00:15:49
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - ASCII
 ---

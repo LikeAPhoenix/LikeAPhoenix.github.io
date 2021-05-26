@@ -4,7 +4,7 @@ title:      "质数筛"
 subtitle:   ""
 date:       2020-11-11 10:07:27
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 质数筛

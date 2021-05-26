@@ -4,7 +4,7 @@ title:      "二分搜索"
 subtitle:   "《挑战程序设计竞赛》3.1章"
 date:       2021-03-11 14:45:16
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 二分搜索

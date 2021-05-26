@@ -4,7 +4,7 @@ title:      "关于我的博客"
 subtitle:   "这篇博客是给以后的自己的教程"
 date:       2021-03-16 19:29:15
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - 教程
 ---

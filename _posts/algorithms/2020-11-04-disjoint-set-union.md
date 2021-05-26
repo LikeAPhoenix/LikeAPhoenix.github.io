@@ -4,7 +4,7 @@ title:      "并查集"
 subtitle:   "Disjoint Set Union"
 date:       2020-11-04 19:21:00
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 并查集

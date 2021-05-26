@@ -4,7 +4,7 @@ title:      "VSCode 快捷键"
 subtitle:   "VSCode keyboard shortcuts"
 date:       2021-01-26 15:42:23
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 教程
     - VSCode

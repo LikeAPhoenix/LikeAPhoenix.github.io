@@ -4,7 +4,7 @@ title:      "算法考核任务"
 subtitle:   "冲冲冲"
 date:       2020-11-03 12:27:01
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
 ---

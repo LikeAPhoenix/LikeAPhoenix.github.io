@@ -4,7 +4,7 @@ title:      "快速幂"
 subtitle:   ""
 date:       2020-11-11 10:51:35
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
     - 快速幂

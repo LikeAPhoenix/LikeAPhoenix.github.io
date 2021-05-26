@@ -4,7 +4,7 @@ title:      "数据寻址方式"
 subtitle:   "一共7种方法"
 date:       2021-04-08 11:51:52
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - 学习
     - 微机原理

@@ -4,7 +4,7 @@ title:      "如何去学习新的知识"
 subtitle:   ""
 date:       2020-12-06 15:20:56
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - 学习
 ---

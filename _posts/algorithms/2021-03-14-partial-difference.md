@@ -4,7 +4,7 @@ title:      "前缀和、差分"
 subtitle:   "及不同区间操作比较"
 date:       2021-03-14 00:40:37
 author:     "XDong"
-header-img: "img/post-bg-eva-q-asuka-1920x1200.png"
+header-img: "img/post-bg-eva-q-asuka.png"
 tags:
     - 算法
     - 前缀和

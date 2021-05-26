@@ -4,9 +4,10 @@ title:      "KMP算法"
 subtitle:   "Knuth-Morria-Pratt"
 date:       2020-11-03 15:30:21
 author:     "XDong"
-header-img: "img/post-bg-wlop-2880x1800.jpg"
+header-img: "img/post-bg-wlop.jpg"
 tags:
     - 算法
+    - 字符串
     - KMP
 ---
 
