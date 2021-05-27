@@ -157,5 +157,5 @@ int main() {
 
 ## 参考链接
 
-- [维基百科](https://zh.wikipedia.org/wiki/散列函数, "https://zh.wikipedia.org/wiki/散列函数")
-- [oi-wiki](https://oi-wiki.org/string/hash/, "https://oi-wiki.org/string/hash/")
+- [维基百科](https://zh.wikipedia.org/wiki/散列函数 "https://zh.wikipedia.org/wiki/散列函数")
+- [oi-wiki](https://oi-wiki.org/string/hash/ "https://oi-wiki.org/string/hash/")
