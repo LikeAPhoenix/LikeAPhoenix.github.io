@@ -13,13 +13,14 @@ future: true
 
 # SNS settings
 RSS: false
-bilibili_username:  443398104
 #weibo_username:     huxpro
 #zhihu_username:     huxpro
-github_username:    LikeAPhoenix
 #twitter_username:   huxpro
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
+github_username:     LikeAPhoenix
+bilibili_username:   443398104
+steam_username:      76561198969505929
 
 
 
