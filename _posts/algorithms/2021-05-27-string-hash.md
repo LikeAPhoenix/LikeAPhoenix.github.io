@@ -90,7 +90,7 @@ ull hash2(string s) {
 }
 ```
 
-## [【模板】字符串哈希](https://www.luogu.com.cn/problem/P3370, "https://www.luogu.com.cn/problem/P3370")
+## [【模板】字符串哈希](https://www.luogu.com.cn/problem/P3370 "https://www.luogu.com.cn/problem/P3370")
 
 ```cpp
 #include <bits/stdc++.h>
@@ -99,8 +99,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 
-const ull base1 = 131;
-const ull base2 = 131;
+const ull base = 233333;
 const ull mod1 = 1e9 + 7;
 const ull mod2 = 1e9 + 9;
 const int MAXN = 1e4 + 5;
@@ -118,7 +117,7 @@ ull hash1(string s) {
   ull res = 0;
   int size = s.length();
   for (int i = 0; i < size; i++) {
-    res = (res * base1 + ull(s[i])) % mod1;  // 可以不取余，因为unsigned long long 会自然溢出
+    res = (res * base + ull(s[i])) % mod1;  // 可以不取余，因为unsigned long long 会自然溢出
     // res = (res * base1 + ull(s[i])) % mod1;
   }
   return res;
@@ -128,7 +127,7 @@ ull hash2(string s) {
   ull res = 0;
   int size = s.length();
   for (int i = 0; i < size; i++) {
-    res = (res * base2 + ull(s[i])) % mod2;  // 可以不取余，因为unsigned long long 会自然溢出
+    res = (res * base + ull(s[i])) % mod2;  // 可以不取余，因为unsigned long long 会自然溢出
     // res = (res * base1 + ull(s[i])) % mod2;
   }
   return res;
