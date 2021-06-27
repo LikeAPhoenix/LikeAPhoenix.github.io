@@ -73,7 +73,7 @@ E-R图提供了表示实体型、属性和联系的方法
 
 #### 建表
 
-```SQL
+```sql
 CREATE TABLE SC(
     Sno CHAR(9),
     Cno CHAR(4),
@@ -86,7 +86,7 @@ CREATE TABLE SC(
 
 #### 单表查询
 
-```SQL
+```sql
 SELECT Sno, Con
 FROM SC;
 
@@ -129,7 +129,7 @@ HAVING AVG(Grade) >= 90;
 
 #### 连接查询
 
-```SQL
+```sql
 -- 连接查询
 SELECT Student.Sno, Sname
 FROM Student, SC
@@ -150,7 +150,7 @@ WHERE Sno IN(
 
 #### 嵌套查询
 
-```SQL
+```sql
 -- 嵌套查询
 SELECT Sname
 FROM Student
@@ -183,7 +183,7 @@ WHERE PNO != (
 
 #### 建立简单视图
 
-```SQL
+```sql
 CREATE VIEW IS_S1(Sno, Sname, Grade)
 AS
 SELECT Stduent.Sno, Sname, Grade
@@ -219,7 +219,7 @@ FROM SC;
 
 GRANT授权语句：
 
-```SQL
+```sql
 GRANT SELECT
 ON TABLE Stduent
 TO U2, U3;
@@ -232,7 +232,7 @@ WITH GRANT OPTION;
 
 REVOKE收回语句：
 
-```SQL
+```sql
 REVOKE SELECT
 ON TABLE SC
 FROM PUBLIC;
