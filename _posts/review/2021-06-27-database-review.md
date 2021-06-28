@@ -138,14 +138,6 @@ WHERE Student.Sno = SC.Sno AND SC.Cno = '2' AND SC.Grade > 90;
 SELECT FIRST.Cno, SECOND.Cpno
 FROM Course FIRST, Course SECOND
 WHERE FIRST.Cpno = SECOND.Cno;
-
-SELECT Sname
-FROM Student
-WHERE Sno IN(
-    SELECT Sno
-    FROM SC
-    WHERE Cno = '2'
-);
 ```
 
 #### 嵌套查询
@@ -167,6 +159,22 @@ WHERE PNO != (
     FROM S, SPJ
     WHERE S.CITY = '天津' AND S.SNO = SPJ.SNO
 );
+```
+
+#### 单表更新、插入、删除
+
+```sql
+UPDATE Stduent
+SET Sname = '刘层'
+WHERE Sno = '2012' AND Sdept = 'IS';
+
+INSERT
+INTO Student(Sno, sname)
+VALUES('2012', '贺某');
+
+DELETE
+FROM Stduent
+WHERE Sno = '2012';
 ```
 
 ### 视图在数据独立性的作用，会建立简单视图，完成例如查询语句的作用（例如视图可以表述某系学生的课程后和成绩）
@@ -256,3 +264,204 @@ FROM PUBLIC;
 
 ## 第5章
 
+### 能建立断言（类似课本例5.18、5.19、5.20）
+
+```sql
+-- 断言
+-- 5.18 限制数据库课程最多60名学生选修
+CREATE ASSERTION ASSE_SC_DB_NUM
+    CHECK (60 >= (SELECT
+                  FROM Course, SC
+                  WHERE SC.Cno = Course AND Course.Cname = '数据库'));
+
+-- 5.19
+CREATE ASSERTION ASSE_SC_CNUM1
+    CHECK (60 >= ALL(SELECT COUNT(*)
+                     FROM SC
+                     GROUP BY Cno))
+
+-- 5.20
+CREATE ASSERTION ASSE_SC_CNUM2
+    CHECK (60 >= ALL(SELECT COUNT(*)
+                     FROM SC
+                     GROUP BY Cno, Team));
+
+```
+
+### 能够建立级联触发器（类似我们的实验5的1和2）
+
+```sql
+-- 定义触发器
+GO
+CREATE TRIGGER insert_check
+    ON SC
+    FOR INSERT
+AS
+BEGIN
+    DECLARE @grade SMALLINT
+    SELECT @grade = Grade FROM INSERTED
+    IF @grade > 100 OR @grade < 0
+    BEGIN
+        PRINT '输入有误'
+    END
+    ROLLBACK TRANSACTION
+END
+
+GO
+CREATE TRIGGER update_sno
+    ON SC
+    AFTER UPDATE
+AS
+BEGIN
+    DECLARE @sno_old SMALLINT
+    DECLARE @sno_new SMALLINT
+    SELECT @sno_old = Sno FROM DELETED
+    SELECT @sno_new = Sno FROM INSERTED
+    UPDATE SC SET Sno = @sno_new WHERE Sno = @sno_old
+END
+
+GO
+CREATE TRIGGER select_course
+    ON SC
+    AFTER INSERT
+AS 
+BEGIN
+    DECLARE @count SMALLINT
+    DECLARE @sno CHAR(9)
+    SELECT @sno = Sno FROM INSERTED
+    SELECT @count = 
+        COUNT(Sno)
+        FROM SC
+        WHERE Sno = @sno
+    IF @count >= 5
+        PRINT '你已经选了5门课程了'
+    ROLLBACK TRANSACTION
+END
+
+GO
+CREATE TRIGGER check_grade
+    ON SC
+    AFTER UPDATE
+AS IF UPDATE(Grade)
+BEGIN
+    PRINT '不能修改成绩'
+    ROLLBACK TRANSACTION
+END
+
+GO
+CREATE TRIGGER pre_course
+    ON SC
+    AFTER INSERT
+AS
+BEGIN
+    DECLARE @sno CHAR(4)
+    DECLARE @cno CHAR(4)
+    DECLARE @pre CHAR(4)
+    SELECT @sno = Sno FROM INSERTED
+    SELECT @cno = Cno FROM INSERTED
+    SELECT @pre = 
+        Cpno
+        FROM Course
+        WHERE Cno = @cno
+    IF @pre IS NOT NULL BEGIN
+	    INSERT
+        INTO SC
+        VALUES(@sno, @pre, NULL)
+    END
+END
+```
+
+## 第6章
+
+### 候选码的判断
+
+1. 如果有属性不在函数依赖集中出现，那么它必须包含在候选码中；
+2. 如果有属性只在函数依赖集右边出现，那么它必不包含在候选码中；
+3. 如果有属性只在函数依赖集的左边出现，则该属性一定包含在候选码中。
+4. 如果有属性或属性组能唯一标识元组，则它就是候选码，也就是说，通过函数依赖所求出的候选码的闭包中，能够包含所有的属性。
+
+### 范式的辨别
+
+$$1NF \supset 2NF \supset 3NF \supset BCNF \supset 4NF \supset 5NF$$
+
+#### 1NF
+
+第一范式（1NF）指的是要求关系模式R中所有属性都是不可分的基本数据项的范式，记为$R \in 1NF$，第一范式是对关系模式的最起码要求（**不能表中有表**）
+
+#### 2NF
+
+若关系模式R满足第一范式且每一个非主属性都完全依赖于任何一个候选码，则称该关系模式满足第二范式（2NF），记为$R \in 2NF$
+
+#### 3NF
+
+若$R \in 3NF$，则每一个非主属性既不传递依赖于码，也不部分依赖于码
+
+#### BCNF
+
+关系模式$R<U,F> \in 1NF$，若对于R的每个函数依赖$X \rightarrow Y$且$X \nsupseteq Y$时，$X$必含有码，则称$R \in BCNF$，即在关系模式R中每个决定因素都包含码
+
+- 所有非属性码对于每个码都是完全函数依赖
+- 所有非属性码对于每个不包含它的码都是完全函数依赖
+- 没有任何属性完全依赖于非主属性的任何一组属性
+
+### 掌握计算属性闭包的方法
+
+## 第11章
+
+### 了解数据不一致的情形有哪些
+
+1. 丢失修改
+2. 不可重复读
+3. 读“脏”数据
+
+### 了解三级封锁协议可避免哪类数据不一致
+
+- X锁：排他锁，写锁。若事务T对数据对象A加上X锁，只允许T读取和修改A，其他任何事务都不能再对A加任何类型的锁，直到T释放。
+- S锁：共享锁，读锁。若事务T对数据对象A加S锁后，T可以读取A但不能修改A，其他事物只能对A加S锁，不能加X锁，直到T释放。
+
+#### 一级封锁协议
+
+一级封锁协议是：事务T在修改数据R之前必须先对其加X锁，直到事务结束才释放。
+
+可以解决：
+
+- 丢失修改
+
+#### 二级封锁协议
+
+二级封锁协议是：在一级封锁协议基础增加事务T在读取数据R之前必须先对其加S锁，读完后即可释放S锁。
+
+可以解决：
+
+- 丢失修改
+- 读脏数据
+
+#### 三级封锁协议
+
+三级封锁协议是：在一级封锁协议加上事务T在读取数据R之前必须先对其加S锁，直到事务结束才释放。
+
+可以解决：
+
+- 丢失修改
+- 读脏数据
+- 不可重复读
+
+#### 面对一个事务的调度可以把它转换成可串行化的调度的原则是什么？
+
+##### 可串行化调度
+
+可串行化调度是正确的调度
+
+定义：多个事务的并发执行是正确的，当且仅当其结果与按某一次序串行地执行它们时的结果相同，我们称这种调度策略为可串行化的调度。
+
+可串行性时并发事务正确调度的准则
+
+##### 冲突可串行化调度
+
+冲突可串行化调度：保证一个调度中冲突操作次序不变的前提下，通过**交换不同事务的非冲突操作的次序**，能够得到一个串行调度。
+
+冲突操作：不同事务对同一数据进行的写写、读写操作。
+
+不同事务的冲突操作和同一事务的两个操作是不能交换的。
+
+冲突可串行化调度时可串行化调度的**充分条件**，不是**必要条件**
