@@ -3,6 +3,7 @@ _posts/_draft
 _posts/_archive
 _archive
 node_modules
+.vscode
 *.log
 *.lock
 *.sh
@@ -10,11 +11,3 @@ node_modules
 .jekyll-cache
 */.DS_Store
 */*/.DS_Store
-_posts/create.cpp
-_posts/create.exe
-_posts/waste
-_posts/more
-_posts/mine
-img/more
-img/mine
-_export

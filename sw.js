@@ -19,9 +19,9 @@ const PRECACHE_LIST = [
   "./js/bootstrap.min.js",
   "./js/hux-blog.min.js",
   "./js/snackbar.js",
-  "./img/icon_wechat.png",  //这张微信图片有啥用?
-  "./img/avatar-asuka.jpg", // 图片都换成自己的了
-  "./img/home-bg-wlop.jpg",
+  "./img/icon_wechat.png",
+  "./img/avatar-hux.jpg",
+  "./img/home-bg.jpg",
   "./img/404-bg.jpg",
   "./css/hux-blog.min.css",
   "./css/bootstrap.min.css"
@@ -31,7 +31,7 @@ const PRECACHE_LIST = [
 ]
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "xdong.site", // 换成了自己的域名
+  "huangxuan.me",
   "yanshuo.io",
   "cdnjs.cloudflare.com"
 ]
