@@ -106,3 +106,69 @@ KaTeX中宏的用法[Markdown+Math](https://marketplace.visualstudio.com/items?i
 gitalk教程：
 
 - [Add Gitalk to Your Jekyll Blog](https://aerolith.ink/2018/08/25/Gitalk/)
+
+## 建站时间与网站计数
+
+首先引入在footer.html中引入脚本
+
+```html
+<!-- 不蒜子脚本 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+```
+
+然后添加span
+
+```html
+<!-- 站点计时 -->
+<span id='site_time'></span>
+<br>
+<!-- 不蒜子计数 -->
+<span id="busuanzi_container_site_uv">
+    👤Total Visitors <span id="busuanzi_value_site_uv"></span> |
+</span>
+<span id="busuanzi_container_site_pv">
+    👀Total Visits <span id="busuanzi_value_site_pv"></span>
+</span>
+<br>
+```
+
+编写js计时函数
+
+```html
+<!-- 站点计时 -->
+<script>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        var t1 = Date.UTC(2020, 10, 24, 00, 00, 00);  //此处填写建站时间
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        var title = '{{ site.title }}'  // 获取名称
+        document.getElementById("site_time").innerHTML =
+            "⏱️" + title + " already run " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " s";
+    }
+    siteTime();
+</script>
+```
+
+参考：
+- [不蒜子 - 极简网页计数器](http://busuanzi.ibruce.info/)
+- [Mike Lyou Blog](https://blog.mikelyou.com/2020/08/18/busuanzi-visitor-counts-and-sitetime/)
