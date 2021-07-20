@@ -19,33 +19,33 @@ tags:
 
 ## keyboard-shortcuts-windows
 
-![keyboard-shortcuts-windows](/img/software/keyboard-shortcuts-windows.jpg)
+![keyboard-shortcuts-windows](/img/tutorial/keyboard-shortcuts-windows.jpg)
 
 ## General
 
 ### Ctrl+Shift+P,F1:Show Command Palette
 
-![ctrl+shift+p,f1](/img/software/shortcuts/ctrl+shift+p,f1.gif)
+![ctrl+shift+p,f1](/img/tutorial/shortcuts/ctrl+shift+p,f1.gif)
 
 ### Ctrl+P:Quick Open, Go to File…
 
-![ctrl+p](/img/software/shortcuts/ctrl+p.gif)
+![ctrl+p](/img/tutorial/shortcuts/ctrl+p.gif)
 
 ### Ctrl+Shift+N:New window/instance
 
-![ctrl+shift+n](/img/software/shortcuts/ctrl+shift+n.gif)
+![ctrl+shift+n](/img/tutorial/shortcuts/ctrl+shift+n.gif)
 
 ### Ctrl+Shift+W:Close window/instance
 
-![ctrl+shift+w](/img/software/shortcuts/ctrl+shift+w.gif)
+![ctrl+shift+w](/img/tutorial/shortcuts/ctrl+shift+w.gif)
 
 ### Ctrl+,:User Settings
 
-![ctrl+,](/img/software/shortcuts/ctrl+,.gif)
+![ctrl+,](/img/tutorial/shortcuts/ctrl+,.gif)
 
 ### Ctrl+K Ctrl+S:Keyboard Shortcuts
 
-![ctrl+k_ctrl+s](/img/software/shortcuts/ctrl+k_ctrl+s.gif)
+![ctrl+k_ctrl+s](/img/tutorial/shortcuts/ctrl+k_ctrl+s.gif)
 
 ## Basic editing
 
