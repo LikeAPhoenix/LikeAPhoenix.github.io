@@ -115,5 +115,11 @@ friends: [
     # },{
         title: "Conan-jine - 博客园",
         href: "https://www.cnblogs.com/Conan-jine/"
+    },{
+        title: "柯南简Akkn",
+        href: "https://cnwjy.site/"
+    },{
+        title: "Eotdawn Blog",
+        href: "https://eotdawn.github.io/"
     }
 ]
