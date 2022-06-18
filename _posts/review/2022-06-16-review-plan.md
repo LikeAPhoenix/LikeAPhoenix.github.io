@@ -6,7 +6,7 @@ date:       2022-06-16 21:53:50
 author:     "XDong"
 header-img: "img/post-bg-wlop-1.jpg"
 tags:
-    - 学习 
+    - 复习
     - 编译原理 
     - 嵌入式 
     - 软件工程
