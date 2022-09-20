@@ -194,6 +194,12 @@ gem 'eventmachine', '1.2.7', git: 'https://github.com/eventmachine/eventmachine.
 3. 已经可以成功刷新，修改为延迟自动刷新，在`sw-registration.js`中增加一行
 ```setTimeout(()=>location.reload(), 3000)```
 
+## cdn资源总结
+
+- [lib.baomitu.com](https://cdn.baomitu.com/)用于大部分js文件，如Mathjax，fastclick，部分css文件，如font-awesome，原[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/)的国内访问不流畅
+- alicdn用于bilibili图标
+- [cdn.jsdelivr.net](https://www.jsdelivr.com/)用于gitalk的js文件
+
 参考：
 
 - [不蒜子 - 极简网页计数器](http://busuanzi.ibruce.info/)
