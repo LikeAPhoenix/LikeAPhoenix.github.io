@@ -33,9 +33,10 @@ const HOSTNAME_WHITELIST = [
   self.location.hostname,
   "xdong.site", // 换成了自己的域名
   "yanshuo.io",
-  "cdnjs.cloudflare.com",
-  "cdn.jsdelivr.net", // 用于gitalk js文件
-  "lib.baomitu.com"   // 用于js、css文件
+  // 好像下面三条没什么用
+  // "cdnjs.cloudflare.com",
+  // "cdn.jsdelivr.net", // 用于gitalk js文件
+  // "lib.baomitu.com"   // 用于js、css文件
 ]
 const DEPRECATED_CACHES = ['precache-v1', 'runtime', 'main-precache-v1', 'main-runtime']
 
