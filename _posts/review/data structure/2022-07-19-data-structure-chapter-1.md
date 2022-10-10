@@ -40,7 +40,7 @@ tags:
 
 几种逻辑结构层次图：
 
-![几种逻辑结构层次图](/img/study/data-structure/chart-1.4.png)
+![几种逻辑结构层次图](/img/review/data-structure/chart-1.4.png)
 
 #### 存储结构
 

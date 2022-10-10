@@ -55,9 +55,9 @@ tags:
 
 1. 线性表的逻辑结构特性是指数据元素之间存在着线性关系，在计算机中表示这种关系的两种不同的存储结构是顺序存储结构和链式存储结构，即顺序表和链表
 2. 顺序表是随机存取结构，链表是顺序存取结构
-    ![顺序表和链表的比较](/img/study/data-structure/table-2.2.png)
+    ![顺序表和链表的比较](/img/review/data-structure/table-2.2.png)
 3. 单链表、循环链表、双向链表的对比
-    ![不同链表的比较](/img/study/data-structure/table-2.3.png)
+    ![不同链表的比较](/img/review/data-structure/table-2.3.png)
 
 ## 易错点
 
