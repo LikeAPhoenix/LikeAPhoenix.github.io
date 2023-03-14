@@ -175,7 +175,7 @@ gitalk教程：
 
 正常情况下，可以通过`jekyll serve --livereload`来使用livereload功能
 
-由于版本问题`eventmachine`版本问题，要在`Gemfile`中添加一行代码
+由于部分jekyll版本需要安装`eventmachine`，要在`Gemfile`中添加一行代码
 
 ```
 gem 'eventmachine', '1.2.7', git: 'https://github.com/eventmachine/eventmachine.git', tag: 'v1.2.7'
