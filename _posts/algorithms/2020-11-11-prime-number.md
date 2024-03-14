@@ -33,6 +33,7 @@ bool is_prime(int x) {
       return false;
     }
   }
+  return true
 }
 ```
 
@@ -47,7 +48,7 @@ bool is_prime(int x) {  // 普通法 O(logN)
   if (x == 1) {
     return false;
   }
-  for (int i = 2; i <= x / 2; i++) {
+  for (int i = 2; i <= sqrt(x); i++) {
     if (x % i == 0) {
       return false;
     }
@@ -72,12 +73,12 @@ bool is_prime(int x) {  // 普通法 O(logN)
 bool is_prime[10000];
 void eratosthenes(int x) {
   memset(is_prime, true, sizeof(is_prime));  // 所有数默认标记为质数
-  is_prime[1] = false;  // 1不是质数
+  is_prime[0] = is_prime[1] = false;  // 1不是质数
 
   for (int i = 2; i <= x; i++) {  // 从2开始枚举
     if (is_prime[i]) {  // 如果i是质数
-      for (int j = 2; i * j <= n; j++) {  // i的倍数不是质数
-        is_prime[i * j] = false;
+      for (int j = i * i; j <= n; j += i) {  // i的倍数不是质数
+        is_prime[j] = false;
       }
     }
   }
