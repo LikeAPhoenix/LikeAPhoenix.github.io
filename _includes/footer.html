@@ -146,6 +146,19 @@
 </script>
 {% endif %}
 
+<!-- Google Analytics 4 -->
+{% if site.ga4_track_id %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_track_id }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.ga4_track_id }}');
+</script>
+{% endif %}
+
 
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}

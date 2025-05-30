@@ -5,7 +5,7 @@ header-img: img/home-bg-wlop.jpg
 email: 
 description: "记录学习历程 | 这里是 @XDong 的个人博客，一片自留地。"
 keyword: ""
-url: "https://xdong.site"              # your host, for absolute URL
+url: "https://likeaphoenix.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -19,8 +19,8 @@ RSS: false
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 github_username:     LikeAPhoenix
-bilibili_username:   443398104
-steam_username:      76561198969505929
+#bilibili_username:   443398104
+#steam_username:      76561198969505929
 
 
 
@@ -32,7 +32,7 @@ paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
+timezone: CN  
 
 
 
@@ -78,8 +78,11 @@ gitalk_repo: LikeAPhoenix.github.io
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-190994453-1'            # Format: UA-xxxxxx-xx
-ga_domain: xdong.site
+# ga_track_id: 'UA-190994453-1'            # Format: UA-xxxxxx-xx
+# ga_domain: xdong.site
+
+# Google Analytics 4
+ga4_track_id: 'G-L19FZMSZ97'
 
 
 
